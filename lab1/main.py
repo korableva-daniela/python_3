@@ -65,3 +65,58 @@ def f_31(x):
 
     return k
 #print(f_31(x))
+#Дана строка в которой записаны слова через пробел. Необходимо
+#перемешать в каждом слове все символы в случайном порядке кроме первого
+#и последнего.
+import random
+#x= str(input("Введите строку: "))
+def func_s_2(x):
+    s = x.split()
+    for i in range(0, len(s)):
+
+      if len(s[i]) > 2:
+        e1 = s[i]
+        e2 = list(e1[1:len(e1) - 1])
+        random.shuffle(e2)
+        e2 = "".join(e2)
+        e1 = s[i][0] + e2 + s[i][len(s[i]) - 1]
+        s[i] = "".join(e1)
+    s = " ".join(s)
+    return(s)
+
+
+
+#print(func_s_2(x))
+import random
+#Дана строка в которой содержатся цифры и буквы. Необходимо
+#расположить все цифры в начале строки, а буквы – в конце.
+#s= str(input("Введите строку: "))
+def func_s_3(s):
+ length =len(s)
+
+ i=0
+ while i<length:
+  s_int = ''
+  s_str = ''
+  while i<length:
+     if ('0'<=s[i]<='9'):
+      s_int +=s[i]
+     else: s_str +=s[i]
+     i+=1
+  i+=1
+  str1=s_int+s_str
+
+ return str1
+
+#print(func_s_3(s))
+
+#Дана строка в которой записаны слова через пробел. Необходимо
+#перемешать все слова в случайном порядке (спонсор задачи Мастер Йода).
+#s= str(input("Введите строку: "))
+def func_s_4(s):
+ words = s.split(" ")
+ random.shuffle(words)
+ words1 = ''.join(words)
+ return (words1)
+
+#print(func_s_4(s))
