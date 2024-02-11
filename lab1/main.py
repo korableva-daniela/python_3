@@ -120,3 +120,48 @@ def func_s_4(s):
  return (words1)
 
 #print(func_s_4(s))
+
+#Дана строка. Необходимо подсчитать количество чисел в этой строке,
+#значение которых больше 5
+#s= str(input("Введите строку: "))
+def func_s2_1(s):
+    length =len(s)
+    i=0
+    k=0
+    while i<length:
+       if '6'<=s[i]<='9':
+           k+=1
+       i+=1
+    return k
+#print(func_s2_1(s))
+#Дана строка. Необходимо найти те символы кириллицы, которые не
+#задействованы в данной строке.
+#s= str(input("Введите строку: "))
+def func_s2_2(s):
+ cyr= 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+ string=''
+ length =len(s)
+
+ s=set(s)
+ s={a.lower() for a in s}
+ for a in cyr:
+     if a not in s:
+         string+=a
+
+ return string
+#print(func_s2_2(s))
+
+#s= str(input("Введите строку: "))
+#Дана строка. Необходимо найти максимальное из имеющихся в ней
+#натуральных чисел.
+def func_s2_3(s):
+   number = s.split(" ")
+   mas=[]
+   for i,num in enumerate(number):
+       if num.isdigit():
+           mas.append(int(num))
+   max=0
+   for i in range(0,len(mas)):
+       if mas[i]>=max: max=mas[i]
+   return max
+#print(func_s2_3(s))
