@@ -198,3 +198,109 @@ for i in range(n):
     input_str[i]=' '.join(input_str[i])
 print(input_str)
 
+#Дан целочисленный массив. Необходимо осуществить циклический
+#сдвиг элементов массива влево на три позиции.
+
+#n=int(input("размерность массива:"))
+#mas=[]
+#for i in range(0,n):
+ # x= x=int(input("Введите элемент массива:"))
+ # mas.append(x)
+def func_s5_1(mas):
+    steps =3
+    for i in range(steps):
+        mas.append(mas.pop(0))
+    return mas
+#print(func_s5_1(mas))
+
+#Дан целочисленный массив. Необходимо расположенные перед первым минимальным.
+#n=int(input("размерность массива:"))
+#mas=[]
+#for i in range(0,n):
+ # x= x=int(input("Введите элемент массива:"))
+ # mas.append(x)
+def func_s5_2(mas):
+    min = mas[0]
+    j=0
+    for i in range(len(mas)):
+        if mas[i]<min:
+            min=mas[i]
+            j=i
+    if j==0:
+     return -1
+    else:
+        return mas[j-1]
+#print(func_s5_2(mas))
+
+#Дан целочисленный массив и натуральный индекс (число, меньшее размера массива). Необходимо определить является ли элемент по указанному
+#индексу локальным максимумом.
+#n=int(input("размерность массива:"))
+#mas=[]
+#for i in range(0,n):
+ #  x=int(input("Введите элемент массива:"))
+ # mas.append(x)
+#l=int(input())
+def func_s5_3(mas,l):
+    str1="элемент локальный максимум"
+    str2 = "элемент не локальный максимум"
+    if l!=0 and l!=mas[len(mas)-1]:
+      if(mas[l-1]<mas[l] and mas[l+1]<mas[l]):
+          return str1
+      else:
+          return str2
+    elif l==0:
+        if(mas[0]>mas[1]):
+            return str1
+        else:
+            return str2
+    elif l==mas[len(mas)]:
+        if(mas[l]>mas[l-1]):
+            return str1
+        else:
+            return str2
+
+#print(func_s5_3(mas,l))
+#Дан целочисленный массив. Найти все элементы, которые меньше
+#среднего арифметического элементов массива.
+#n=int(input("размерность массива:"))
+#mas=[]
+#for i in range(0,n):
+ # x=int(input("Введите элемент массива:"))
+ # mas.append(x)
+def func_s5_4(mas):
+    sum=0
+    for i in range(len(mas)):
+        sum+=mas[i]
+    srar=sum/len(mas)
+    mas2=[]
+    for i in range(len(mas)):
+        if(mas[i]<srar):
+            mas2.append(mas[i])
+    return mas2
+#print(func_s5_4(mas))
+
+#Для введенного списка построить список из элементов, встречающихся в исходном более трех раз.
+#n=int(input("размерность :"))
+#list=[]
+#for i in range(0,n):
+ # x=input("Введите элемент:")
+ # list.append(x)
+def func_s5_5(list):
+    list2=[]
+    for i in range(len(list)-1):
+        k=0
+        for j in range(len(list)-1):
+          if  type(list[i])==type(list[j]):
+             if list[i]==list[j]:
+              k+=1
+        if k>3:
+            m=0
+            for l in range(len(list2)):
+                if type(list[i]) == type(list2[l]):
+                    if list[i] == list2[l]:
+                        m+=1
+            if m==0:
+             list2.append(list[i])
+
+    return list2
+#print(func_s5_5(list))
