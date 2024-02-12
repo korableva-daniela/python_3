@@ -165,3 +165,36 @@ def func_s2_3(s):
        if mas[i]>=max: max=mas[i]
    return max
 #print(func_s2_3(s))
+
+#Дана строка. Необходимо найти все даты, которые описаны в виде "31 февраля 2007"
+
+str = input("Введите строку")
+import re
+print(re.findall(r'\d{1,2} \w{3,8} \d\d\d\d', str))
+
+# Прочитать список строк с клавиатуры. Упорядочить по длине строки.
+n=int(input())
+list=[]
+for i in range(0,n):
+  x=input()
+  list.append(x)
+n = int(input("Введите количество строк "))
+input_str = []
+
+for i in range(n):
+    input_str.append(input("Введите строку: "))
+print(sorted(input_str, key=len))
+
+# Дан список строк с клавиатуры. Упорядочить по количеству слов в строке.
+n = int(input("Введите количество строк "))
+input_str = []
+
+for i in range(n):
+    input_str.append(input("Введите строку: "))
+for i in range(n):
+    input_str[i]=input_str[i].split(' ')
+input_str = sorted(input_str, key=len)
+for i in range(n):
+    input_str[i]=' '.join(input_str[i])
+print(input_str)
+
