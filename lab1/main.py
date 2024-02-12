@@ -304,3 +304,111 @@ def func_s5_5(list):
 
     return list2
 #print(func_s5_5(list))
+
+#В порядке увеличения квадратичного отклонения между средним
+#весом ASCII-кода символа в строке и максимально среднего ASCII-кода
+#тройки подряд идущих символов в строке.
+#n = int(input("Введите количество строк "))
+#s = []
+#for i in range(n):
+ #   s.append(input("Введите строку: "))
+
+def weight(s):
+    sum = 0
+    for i in range(len(s)):
+        sum += ord(s[i])
+    return sum
+
+def func_s4_3(s,n):
+        mas = []
+        for i in range(n):
+            wi = weight(s[i])
+            max_w = 0
+            for j in range(len(s[i])-2):
+                if (ord(s[i][j]) + ord(s[i][j+1]) + ord(s[i][j+2]))>max_w:
+                    max_w = ord(s[i][j]) + ord(s[i][j+1]) + ord(s[i][j+2])
+            mas.append([(wi / len(s[i]) - max_w / 3) ** 2, s[i]])
+        mas = sorted(mas)
+        return mas
+#print(func_s4_3(s, n))
+
+#В порядке увеличения медианного значения выборки строк (прошлое
+#медианное значение удаляется из выборки и производится поиск нового
+#медианного значения).
+#n = int(input("Введите количество строк "))
+#s = []
+#for i in range(n):
+#   s.append(input("Введите строку: "))
+def func_s4_2(s, n):
+    mas = []
+    si=[]
+    mas2=[]
+    for i in range(n):
+        si = sorted(s[i])
+
+        if int(len(si[i])%2)==0:
+            med=(si[(len(si))/2]+si[(len(si))/2-1])/2
+        else:
+            med = (si[int((len(si) - 1) / 2)])
+        mas.append([med,s[i]])
+    mas=sorted(mas)
+    return mas
+
+
+#print(func_s4_2(s, n))
+
+#В порядке увеличение квадратичного отклонения частоты
+#встречаемости самого распространенного символа в наборе строк от частоты
+#его встречаемости в данной строке.
+#n = int(input("Введите количество строк "))
+#s = []
+#for i in range(n):
+ #  s.append(input("Введите строку: "))
+def func_sa_3(s, n):
+    res=[]
+    s1=""
+    mas=[]
+    for q in range(n):
+      s1+=s[q]
+    dlin=len(s1)
+    t = ([(s1.count(i), i) for i in s1])
+    g = sorted(set(t))[::-1][:1]
+    for l in range(n):
+      kol=0
+      dlini=len(s[l])
+      for a in range(len(s[l])):
+          if s[l][a]==g[0][1]:
+           kol+=1
+      mas.append([(g[0][0] / dlin - kol /dlini)** 2, s[l]])
+    mas = sorted(mas)
+
+    return mas
+#print(func_sa_3(s, n))
+
+#В порядке увеличения разницы между частотой наиболее часто
+#встречаемого символа в строке и частотой его появления в алфавите.
+#n = int(input("Введите количество строк "))
+#s = []
+#for i in range(n):
+#   s.append(input("Введите строку: "))
+def func_sa_2(s, n):
+    frequency = dict(
+        {'e': 0.130, 't': 0.105, 'a': 0.081, 'o': 0.079, 'n': 0.071, 'r': 0.068, 'i': 0.63, 's': 0.061, 'h': 0.052,
+         'd': 0.038, 'l': 0.034, 'f': 0.029, 'c': 0.027, 'm': 0.025, 'u': 0.024, 'g': 0.020, 'y': 0.019, 'p': 0.019,
+         'w': 0.014, 'v': 0.009, 'k': 0.0015, 'j': 0.0013, 'q': 0.0011, 'z': 0.0007})
+    res=[]
+    for l in range(n):
+      h=[]
+      t = ([(s[l].count(i), i) for i in s[l]])
+      g=sorted(set(t))[::-1][:1]
+      kol = g[0][0]
+      element = g[0][1]
+      x=frequency.get(element)
+      res.append(kol-x)
+    mas=[]
+    for j in range(n):
+     mas.append([res[j],s[j]])
+    mas = sorted(mas)
+
+    return mas
+#print(func_sa_2(s, n))
