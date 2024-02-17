@@ -81,13 +81,15 @@ def move(T1):
         tr1=[]
         for i in range(len(T1.p)):
          tr1.append(p[i])
-        tet2 = Tetragon(2, tr1)
-        return tet2
+
+        return T1
+
 
 def prin(T1):
-        print("Tetragon points", T1.__class__.__name__, " : ")
+        print("Points", T1.__class__.__name__, T1.shape, " : ")
         for i in range(len(T1.p)):
             print("x:",p[i].get_x(),"y:",p[i].get_y())
+
 
 
 
@@ -108,33 +110,39 @@ p.append(Point(0,5))
 p.append(Point(5,0))
 p.append(Point(0,0))
 tr1=Triangle(1,p)
-
+prin(tr1)
+#move() сдвигает фигуру на 3 по х и на 5 по у
+move(tr1)
+prin(tr1)
 p=[]
 p.append(Point(0,7))
 p.append(Point(7,0))
 p.append(Point(1,1))
 tr2=Triangle(2,p)
-
+prin(tr2)
+#move() сдвигает фигуру на 3 по х и на 5 по у
+move(tr2)
+prin(tr2)
 p=[]
 p.append(Point(0,5))
 p.append(Point(5,0))
 p.append(Point(0,0))
 p.append(Point(5,5))
 tet1=Tetragon(1,p)
-
+prin(tet1)
+#move() сдвигает фигуру на 3 по х и на 5 по у
+move(tet1)
+prin(tet1)
 p=[]
 p.append(Point(0,7))
 p.append(Point(7,0))
 p.append(Point(1,1))
 p.append(Point(7,7))
 tet2=Tetragon(2,p)
-
+prin(tet2)
+#move() сдвигает фигуру на 3 по х и на 5 по у
+move(tet2)
+prin(tet2)
 compare(tr1,tr2)
 compare(tet1,tet2)
-prin(tet1)
-move(tet1)
-prin(tet1)
-prin(tr1)
-#move() сдвигает фигуру на 3 по х и на 5 по у
-move(tr1)
-prin(tr1)
+
