@@ -68,10 +68,54 @@ cursor.execute("""INSERT INTO  take_a_book(id_take , number_of_days,id_books,id_
 cursor.execute("""INSERT INTO  take_a_book(id_take , number_of_days,id_books,id_students)
    VALUES('33333', '15', '00012','00002' );""")
 
+
 sqlite_select_query ="""Select* from student;"""
 
-conn.commit()
 
 
 
 
+cursor.execute(sqlite_select_query)
+records = cursor.fetchall()
+print("Всего строк:  ", len(records))
+print("Вывод каждой строки")
+for row in records:
+    print("ID:", row[0])
+    print("Имя:", row[1])
+    print("Фамилия:", row[2])
+    print("Возраст:", row[3])
+    print("Курс:", row[4])
+    print("Факультет:", row[5], end="\n\n")
+
+sqlite_select_query ="""Select id_books,name,surname from take_a_book,student where student.id_student=take_a_book.id_students and student.surname="Менделеев";"""
+
+cursor.execute(sqlite_select_query)
+records = cursor.fetchall()
+print("Всего строк:  ", len(records))
+print("Вывод книг, которые брал  Дмитрий Менделеев ")
+for row in records:
+    print("ID book:", row[0])
+    print("Имя студента:", row[1])
+    print("Фамилия студента:", row[2], end="\n\n")
+
+
+
+sqlite_select_query ="""Select* from student  where course=2;"""
+
+cursor.execute(sqlite_select_query)
+records = cursor.fetchall()
+print("Всего строк:  ", len(records))
+print("Вывод студентов 2 курса")
+for row in records:
+    print("ID:", row[0])
+    print("Имя:", row[1])
+    print("Фамилия:", row[2])
+    print("Возраст:", row[3])
+    print("Факультет:", row[5], end="\n\n")
+cursor.execute('SELECT MAX(age) FROM student')
+
+min_age = cursor.fetchone()[0]
+print('Возраст самого взрослого студента:', min_age)
+
+
+conn.close()
