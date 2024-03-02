@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<form action="lab6.CGI.py" method="post">
+    <h2>Формы для заполнения таблиц</h2>
+    <fieldset>
+      <legend>Форма для заполнения полей таблицы Student</legend>
+      <ul>
+        <li>
+          <label for="name">Имя студента:*</label>
+          <input type="text" name="name" placeholder="Иван" id="name" required>
+        </li>
+        <li>
+            <label for="surname">Фамилия студента:*</label>
+            <input type="text" name="surname" placeholder="Ургант" id="surname" required>
+        </li>
+        <li>
+          <label for="age">Возраст студента:*</label>
+          <input type="number" name="age" placeholder="18" id="age" min="15" max="70" required>
+        </li>
+     <li>
+          <label for="course">Курс обучения:*</label>
+          <input type="number" name="course" placeholder="1" id="course" min="1" max="6" required>
+        </li>
+		     <li>
+            <label for="faculty">Название факультета:*</label>
+            <input type="text" name="faculty" placeholder="Международная журналистика" id="faculty" required>
+        </li>
+      </ul>
+    </fieldset>
+	 <div>
+      <button type="submit">Отправить</button>
+
+    </div>
+	</form>
+<form action="lab6. CGI.py" method="get">
+    <fieldset>
+      <legend>Форма для заполнения полей таблицы Book</legend>
+      <ul>
+        <li>
+          <label for="name_book">Название книги:*</label>
+          <input type="text" name="name_book" placeholder="Отцы и дети" id="name_book" required>
+        </li>
+
+        <li>
+            <label for="autor">Автор книги:*</label>
+            <input type="text" name="autor" placeholder="Тургенев" id="autor" required>
+        </li>
+        <li>
+            <label for="year_of_publication">Дата издания:</label>
+            <input type="number" name="year_of_publication" placeholder="1862" id="year_of_publication" >
+          </li>
+       </ul>
+    </fieldset>
+	 <div>
+      <button type="submit">Отправить</button>
+
+    </div>
+
+	</form>
+<form action="lab6. CGI.py" method="get">
+    <fieldset>
+      <legend>Форма для заполнения полей таблицы Library</legend>
+      <ul>
+      <li>
+        <label for="name_library">Название библиотеки:*</label>
+        <input type="text" name="name_library" placeholder="Центральная библиотека " id="name_library" required>
+      </li>
+      <li>
+          <label for="address_library">Адрес библиотеки:*</label>
+          <input type="text" name="address_library" placeholder="город Волгодонск ул. Ленина, 75" id="address_library" required>
+      </li>
+    </ul>
+    </fieldset>
+        <form action="lab6.CGI.py" method="post">
+                <div>
+      <button type="submit">Отправить</button>
+    </div>
+</form>
+<fieldset>
+      <legend>Форма для заполнения полей таблицы book_in_library</legend>
+      <ul>
+      <li>
+        <label for="copies">Количество копий:*</label>
+        <input type="number" name="copies" placeholder="100 " id="copies" required>
+      </li>
+      <li>
+          <label for="id_books">Id книги:*</label>
+          <input type="number" name="id_books" placeholder="00111" id="id_books" required>
+      </li>
+
+      <li>
+          <label for="id_libraryes">Id библиотеки:*</label>
+          <input type="number" name="id_libraryes" placeholder="01111" id="id_libraryes" required>
+      </li>
+    </ul>
+    </fieldset>
+                <form action="lab6.CGI.py" method="post">
+                <div>
+      <button type="submit">Отправить</button>
+    </div>
+</form>
+            <form action="lab6.CGI.py" method="post">
+<fieldset>
+      <legend>Форма для заполнения полей таблицы take_a_book</legend>
+      <ul>
+      <li>
+        <label for="number_of_days">На какое количество дней студент взял книгу:*</label>
+        <input type="number" name="number_of_days" placeholder="10 " id="number_of_days" required>
+      </li>
+      <li>
+          <label for="id1_books">Id книги:*</label>
+          <input type="number" name="id1_books" placeholder="00111" id="id1_books" required>
+      </li>
+
+      <li>
+          <label for="id1_students">Id студента:*</label>
+          <input type="number" name="id1_students" placeholder="00001" id="id1_students" required>
+      </li>
+    </ul>
+    </fieldset>
+
+    <div>
+      <button type="submit">Отправить</button>
+      <p>* — Обязательные поля</p>
+    </div>
+</form>
