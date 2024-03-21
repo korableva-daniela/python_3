@@ -1,0 +1,100 @@
+[
+    [
+        {
+            "id_student": 11,
+            "name": "Александр",
+            "surname": "Невский",
+            "age": 20,
+            "course": 2,
+            "faculty": "Исторический"
+        },
+        {
+            "id_student": 12,
+            "name": "Дмитрий",
+            "surname": "Менделеев",
+            "age": 21,
+            "course": 3,
+            "faculty": "Химический"
+        },
+        {
+            "id_student": 13,
+            "name": "Петя",
+            "surname": "Петров",
+            "age": 23,
+            "course": 4,
+            "faculty": "Журналистики"
+        }
+    ],
+    [
+        {
+            "id_book": 21,
+            "name_book": "Ромео и Джульетта",
+            "author": "Шекспир",
+            "year_of_publication": 1869
+        },
+        {
+            "id_book": 22,
+            "name_book": "Герой нашего времени",
+            "author": "Лермонтов",
+            "year_of_publication": 1840
+        },
+        {
+            "id_book": 23,
+            "name_book": "Отцы  и дети",
+            "author": "Тургенев",
+            "year_of_publication": 1862
+        }
+    ],
+    [
+        {
+            "id_library": 31,
+            "name_library": "Библиотека имени Ленина",
+            "address_library": "Москва, ул.Воздвиженка"
+        },
+        {
+            "id_library": 32,
+            "name_library": "Библиотека имени Ломоносова",
+            "address_library": "Санкт-Петербург, ул Нахимова"
+        }
+    ],
+    [
+        {
+            "id_book_in_library": 41,
+            "copies": 1000,
+            "id_books": 21,
+            "id_libraryes": 31
+        },
+        {
+            "id_book_in_library": 42,
+            "copies": 200,
+            "id_books": 22,
+            "id_libraryes": 31
+        }
+    ],
+    [
+        {
+            "id_take": 51,
+            "number_of_days": 10,
+            "id1_books": 21,
+            "id1_students": 11
+        },
+        {
+            "id_take": 52,
+            "number_of_days": 7,
+            "id1_books": 22,
+            "id1_students": 12
+        },
+        {
+            "id_take": 53,
+            "number_of_days": 15,
+            "id1_books": 21,
+            "id1_students": 11
+        },
+        {
+            "id_take": 54,
+            "number_of_days": 10,
+            "id1_books": 21,
+            "id1_students": 11
+        }
+    ]
+]

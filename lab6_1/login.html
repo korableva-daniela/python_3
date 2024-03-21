@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<form action="lab6.CGI.py" method="post">
+<form action="cgi-bin/student.py" method="POST">
     <h2>Формы для заполнения таблиц</h2>
     <fieldset>
       <legend>Форма для заполнения полей таблицы Student</legend>
@@ -37,7 +37,7 @@
 
     </div>
 	</form>
-<form action="lab6. CGI.py" method="get">
+<form action="cgi-bin/book.py" method="POST">
     <fieldset>
       <legend>Форма для заполнения полей таблицы Book</legend>
       <ul>
@@ -47,8 +47,8 @@
         </li>
 
         <li>
-            <label for="autor">Автор книги:*</label>
-            <input type="text" name="autor" placeholder="Тургенев" id="autor" required>
+            <label for="author">Автор книги:*</label>
+            <input type="text" name="author" placeholder="Тургенев" id="author" required>
         </li>
         <li>
             <label for="year_of_publication">Дата издания:</label>
@@ -62,7 +62,7 @@
     </div>
 
 	</form>
-<form action="lab6. CGI.py" method="get">
+<form action="cgi-bin/library.py" method="POST">
     <fieldset>
       <legend>Форма для заполнения полей таблицы Library</legend>
       <ul>
@@ -76,11 +76,12 @@
       </li>
     </ul>
     </fieldset>
-        <form action="lab6.CGI.py" method="post">
+        <form action="cgi-bin/book_in_library.py" method="POST">
                 <div>
       <button type="submit">Отправить</button>
     </div>
 </form>
+    <form action="cgi-bin/book_in_library.py" method="POST">
 <fieldset>
       <legend>Форма для заполнения полей таблицы book_in_library</legend>
       <ul>
@@ -99,12 +100,12 @@
       </li>
     </ul>
     </fieldset>
-                <form action="lab6.CGI.py" method="post">
+
                 <div>
       <button type="submit">Отправить</button>
     </div>
 </form>
-            <form action="lab6.CGI.py" method="post">
+            <form action="cgi-bin/take_a_book.py" method="POST">
 <fieldset>
       <legend>Форма для заполнения полей таблицы take_a_book</legend>
       <ul>
@@ -124,8 +125,7 @@
     </ul>
     </fieldset>
 
-    <div>
+                <div>
       <button type="submit">Отправить</button>
-      <p>* — Обязательные поля</p>
     </div>
 </form>
